@@ -1,2 +1,2 @@
 # app-calendar
-Un calendario con eventos 
+Este es un calendario con eventos, en desarrollo para la ugel san roman
