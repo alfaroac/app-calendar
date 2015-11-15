@@ -1,28 +1,28 @@
-var calendario=angular.module('ugelApp',['ngRoute']);
+var calendario=angular.module('app',['ngRoute']);
 	calendario.config(['$routeProvider',
 		function($routeProvider) {
 			$routeProvider.
 			when('/events',{
-				templateUrl:'templates/events.html',
+				templateUrl:'templates/events.php',
 			}).
             when('/users',{
-				templateUrl:'templates/users.html',
+				templateUrl:'templates/users.php',
 			}).
 			when('/institution',{
-				templateUrl:'templates/institution.html',
+				templateUrl:'templates/institution.php',
 			}).
 			when('/directors',{
-				templateUrl:'templates/directors.html',
+				templateUrl:'templates/directors.php',
 			}).
 			when('/evidences',{
-				templateUrl:'templates/evidences.html',
+				templateUrl:'templates/evidences.php',
 			}).
 			when('/files',{
-				templateUrl:'templates/files.html',
+				templateUrl:'templates/files.php',
 			}).
 			otherwise({
 				redirectTo:'/',
-				templateUrl:'templates/inicio.html',
+				templateUrl:'templates/inicio.php',
 			});
 			
 	}]);

@@ -6,6 +6,49 @@
 	  </span>
 	</div>
 </div>
+
+
+<br><br>
+<div class="" id="users" >
+  <table class="table table-striped table-condenced table-hover">
+    <tr>
+      <th>Usuario</th>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>DNI</th>
+      <th>Sexo</th>
+      <th>Direccion</th>
+      <th>Telefono</th>
+      <th>Correo</th>
+      <th>Estado</th>
+      <th>Imagen</th>
+      <th>Rol</th>
+      <th>Opciones</th>
+    </tr>
+
+  <?php
+    include('../conexion.php');
+    $registro=mysql_query('SELECT * FROM users ORDER BY IdUsers ASC');
+    while ($registro2=mysql_fetch_array($registro)) {
+    echo '<tr>
+      <td>'.$registro2['username'].'</td>
+      <td>'.$registro2['name'].'</td> 
+      <td>'.$registro2['lastname'].'</td>      
+      <td>'.$registro2['dni'].'</td> 
+      <td>'.$registro2['sex'].'</td> 
+      <td>'.$registro2['address'].'</td>
+      <td>'.$registro2['telephone'].'</td>
+      <td>'.$registro2['email'].'</td>  
+      <td>'.$registro2['state'].'</td>
+      <td>'.$registro2['image'].'</td> 
+      <td>'.$registro2['role'].'</td> 
+      <td><a href="#">Editar</a><a href="#">Delete</a></td>
+    </tr>';
+    }
+  ?>
+  </table>
+<div>
+
 <div>			
 	<button type="submit" class="btn btn-info form-control" data-toggle="modal" data-target="#mimodal">
 	    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true">Agregar</span>
