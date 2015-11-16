@@ -19,7 +19,7 @@
     </tr>
 
   <?php
-    include('../conexion.php');
+    include('../../model/conexion.php');
     $registro=mysql_query('SELECT * FROM institution ORDER BY IdInstitution ASC');
     while ($registro2=mysql_fetch_array($registro)) {
     echo '<tr>

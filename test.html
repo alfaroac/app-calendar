@@ -1,70 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-ui.js"></script>
+</head>
+<body>
+	<a id="SOMEID" class="button btn btn-success" href="#">Delete?</a>
+	<div style="display:none" id="modal-confirmation" title="Delete?">Are you sure you want to delete?</div>
+
+
 <script>
+$(document).ready(function(){
+  var confirmation = $('#modal-confirmation', context).dialog({
+  dialogClass:'delete_confirmation_dialog',
+  autoOpen: false,
+  width:400,
+  minHeight:200,
+  modal: true,
+  resizable: false,
+  buttons: {
+    'Cancel': function() {
+      // YOUR CODE
+      $(this).dialog("close");
+    },
+    'Continue': function() {
+      // YOUR CODE
+      $(this).dialog("close");
+    },
+  },
+  create:function () {
+    $(this).closest(".ui-dialog")
+      .find(".ui-button:eq(1)") // the second button
+      .addClass("continue");
+   }
 
-	$(document).ready(function() {
-
-		$('#calendar').fullCalendar({
-			header: {
-				left: 'prev,next today',
-				center: 'title',
-				right: 'month,agendaWeek,agendaDay'
-			},
-			businessHours: true, // display business hours
-			editable: true,
-			selectable:true,
-			events: [
-				{
-					title: 'Business Lunch',
-					start: '2015-02-03T13:00:00',
-					constraint: 'businessHours'
-				},
-				{
-					title: 'Meeting',
-					start: '2015-02-13T11:00:00',
-					constraint: 'availableForMeeting', // defined below
-					color: '#257e4a'
-				},
-				{
-					title: 'Conference',
-					start: '2015-02-18',
-					end: '2015-02-20'
-				},
-				{
-					title: 'Party',
-					start: '2015-02-29T20:00:00'
-				},
-
-				// areas where "Meeting" must be dropped
-				{
-					id: 'availableForMeeting',
-					start: '2015-02-11T10:00:00',
-					end: '2015-02-11T16:00:00',
-					rendering: 'background'
-				},
-				{
-					id: 'availableForMeeting',
-					start: '2015-02-13T10:00:00',
-					end: '2015-02-13T16:00:00',
-					rendering: 'background'
-				},
-
-				// red areas where no events can be dropped
-				{
-					start: '2015-02-24',
-					end: '2015-02-28',
-					overlap: false,
-					rendering: 'background',
-					color: '#ff9f89'
-				},
-				{
-					start: '2015-02-06',
-					end: '2015-02-08',
-					overlap: false,
-					rendering: 'background',
-					color: '#ff9f89'
-				}
-			]
-		});
-		
+   $('a.button').live("click", function() {
+  confirmation.dialog('open');
+  return false;
 	});
-
+- See more at: http://7sabores.com/blog/crear-un-overlay-confirmacion-modal-jquery-ui-dialog#sthash.1kqzjKLx.dpuf
+});
+});
 </script>
+</body>
+</html>

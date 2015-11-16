@@ -11,22 +11,26 @@
 <div class="" id="events" >
   <table class="table table-striped table-condenced table-hover">
     <tr>
-      <th>Nombre</th>
+      <th>Titulo</th>
       <th>Descripcion</th>
-      <th>Fecha</th>
-      <th>Institucion</th>
+      <th>Lugar</th>
+      <th>Inicio</th>
+      <th>Fin</th>
+      <th>Tipo</th>
       <th>Opciones</th>
     </tr>
 
   <?php
-    include('../conexion.php');
-    $registro=mysql_query('SELECT * FROM files ORDER BY IdFiles ASC');
+    include('../../model/conexion.php');
+    $registro=mysql_query('SELECT * FROM events ORDER BY IdEvents ASC');
     while ($registro2=mysql_fetch_array($registro)) {
     echo '<tr>
-      <td>'.$registro2['name'].'</td>
+      <td>'.$registro2['title'].'</td>
       <td>'.$registro2['description'].'</td>
-      <td>'.$registro2['date'].'</td>
-      <td>'.$registro2['IdInstitution'].'</td>
+      <td>'.$registro2['place'].'</td>
+      <td>'.$registro2['start'].'</td>
+      <td>'.$registro2['end'].'</td>
+      <td>'.$registro2['type'].'</td>
       <td><a href="#">Editar</a><a href="#">Delete</a></td>
     </tr>';
     }
@@ -37,12 +41,12 @@
 
 
 <div>			
-	<button type="submit" class="btn btn-info form-control" data-toggle="modal" data-target="#mimodal">
+	<button type="submit" class="btn btn-info form-control" data-toggle="modal" data-target="#eventmodal">
 	    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true">Agregar</span>
 	</button>
 </div>
 
-<div class="modal fade" id="mimodal" tabindex="-1" role="dialog" aria-labelledby="mymodallabel" aria-hidden="true">
+<div class="modal fade" id="eventmodal" tabindex="-1" role="dialog" aria-labelledby="mymodallabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">                    
             <div class="modal-header">
@@ -52,11 +56,12 @@
            <form name="fe" action="../php/add_users.php" class="form-horizontal" method="post">
 			
 				<div class="form-group">
-					<label for="nombre" class="control-label col-md-3">Nombre:</label>
+					<label for="titulo" class="control-label col-md-3">Titulo:</label>
 					<div class="col-md-8">
-						<input type="file" class="form-control" id="nombre" name="nombre"  >
+						<input type="text" class="form-control" id="titulo" name="titulo"  placeholder="Titulo"><!--value="<?php //echo $var?>"-->
 					</div>
 				</div>
+				
 				<div class="form-group">
 					<label for="descripcion" class="control-label col-md-3">Descripcion:</label>
 					<div class="col-md-8">
@@ -64,21 +69,41 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="fecha" class="control-label col-md-3">Fecha:</label>
+					<label for="lugar" class="control-label col-md-3">Lugar:</label>
 					<div class="col-md-8">
-						<input type="date" class="form-control" id="fecha" name="fecha"  placeholder="Fecha">
+						<input type="text" class="form-control" id="lugar" name="lugar"  placeholder="Lugar">
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="institucion" class="control-label col-md-3">Institucion:</label>
+					<label for="inicio" class="control-label col-md-3">Inicio:</label>
 					<div class="col-md-8">
-						<select class="form-control" name="institucion" id="option">
-							<option value="1">Miguel grau</option>
-							<option value="1">Andres</option>
-						</select>
+						<input type="date" class="form-control" id="inicio" name="inicio"  placeholder="Inicio">
 					</div>
 				</div>
-				
+				<div class="form-group">
+					<label for="fin" class="control-label col-md-3">Fecha fin:</label>
+					<div class="col-md-8">
+						<input type="date" class="form-control" id="fin" name="fin"  placeholder="Fecha fin">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="tipo" class="control-label col-md-3">Tipo:</label>
+					<div class="col-md-8">
+						<select class="form-control" name="tipo" id="tipo">
+							<option value="Importante">Importante</option>
+							<option value="Opcional">Opcional</option>
+						</select>
+					</div>
+				</div>	
+				<div class="form-group">
+					<label for="usuario" class="control-label col-md-3">Usuario:</label>
+					<div class="col-md-8">
+						<select class="form-control" name="usuario" id="usuario">
+							<option value="1">Miguel</option>
+							<option value="3">Javier</option>
+						</select>
+					</div>
+				</div>			
 				<div class="form-group">			
 					<div class="col-md-8 col-md-offset-3">
 						<input class="btn btn-primary" type="submit" name="btn1" value="Buscar">
@@ -92,6 +117,3 @@
         </div>
     </div>
 </div>
-
-
-

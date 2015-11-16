@@ -27,7 +27,7 @@
     </tr>
 
   <?php
-    include('../conexion.php');
+    include('../../model/conexion.php');
     $registro=mysql_query('SELECT * FROM users ORDER BY IdUsers ASC');
     while ($registro2=mysql_fetch_array($registro)) {
     echo '<tr>

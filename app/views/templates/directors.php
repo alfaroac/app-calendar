@@ -21,7 +21,7 @@
     </tr>
 
   <?php
-    include('../conexion.php');
+    include('../../model/conexion.php');
     $registro=mysql_query('SELECT * FROM director ORDER BY IdDirector ASC');
     while ($registro2=mysql_fetch_array($registro)) {
     echo '<tr>

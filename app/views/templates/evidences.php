@@ -19,7 +19,7 @@
     </tr>
 
   <?php
-    include('../conexion.php');
+    include('../../model/conexion.php');
     $registro=mysql_query('SELECT * FROM evidences ORDER BY IdEvidences ASC');
     while ($registro2=mysql_fetch_array($registro)) {
     echo '<tr>
@@ -40,7 +40,7 @@
 </div>
 
 
-<div class="modal fade" id="modal-evidence" tabindex="-1" role="dialog" aria-labelledby="mymodallabel" aria-hidden="true">
+<div class="modal fade" id="evidmodal" tabindex="-1" role="dialog" aria-labelledby="mymodallabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">                    
             <div class="modal-header">
@@ -81,14 +81,16 @@
     </div>
 </div>
 
+<div id="demo">Esto es un demo</div>
+<script src="../js/jquery.min.js"></script>
 <script>
-	$(function(){
-	
-
-	$('#btn-agregar-evid').on('click', function(){
-		$('#modal-evidence').modal('show');
-
-
-	});
+$(document).ready(function(){
+    $("#demo").click(function(){
+        $(this).hide();
+    });
+    $("#btn-agregar-evid").click(function() {
+    	$("#demo").show();
+    	$("#evimodal").show();
+    });
 });
 </script>

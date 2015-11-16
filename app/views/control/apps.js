@@ -3,26 +3,26 @@ var calendario=angular.module('app',['ngRoute']);
 		function($routeProvider) {
 			$routeProvider.
 			when('/events',{
-				templateUrl:'templates/events.php',
+				templateUrl:'views/templates/events.php',
 			}).
             when('/users',{
-				templateUrl:'templates/users.php',
+				templateUrl:'views/templates/users.php',
 			}).
 			when('/institution',{
-				templateUrl:'templates/institution.php',
+				templateUrl:'views/templates/institution.php',
 			}).
 			when('/directors',{
-				templateUrl:'templates/directors.php',
+				templateUrl:'views/templates/directors.php',
 			}).
 			when('/evidences',{
-				templateUrl:'templates/evidences.php',
+				templateUrl:'views/templates/evidences.php',
 			}).
 			when('/files',{
-				templateUrl:'templates/files.php',
+				templateUrl:'views/templates/files.php',
 			}).
 			otherwise({
 				redirectTo:'/',
-				templateUrl:'templates/inicio.php',
+				templateUrl:'views/templates/inicio.php',
 			});
 			
 	}]);

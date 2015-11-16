@@ -2,14 +2,15 @@
 <html>
 <head>
 <meta charset='utf-8' />
-<link href='css/fullcalendar.css' rel='stylesheet' />
-<link href='css/fullcalendar.print.css' rel='stylesheet' media='print' />
-<script src='js/moment.min.js'></script>
-<script src='js/jquery.min.js'></script>
-<script src='js/fullcalendar.min.js'></script>
-<script src="js/test.js"></script>
-<link rel="stylesheet" href="css/test.css">
-<link rel="stylesheet" href="css/bootstrap.min.css"> 
+<link href='app/views/css/fullcalendar.css' rel='stylesheet' />
+<link href='app/views/css/fullcalendar.print.css' rel='stylesheet' media='print' />
+<script src='app/views/js/moment.min.js'></script>
+<script src='app/views/js/jquery.min.js'></script>
+<script src="app/views/js/jquery-2.1.3.min.js"></script>
+<script src='app/views/js/fullcalendar.min.js'></script>
+<script src="app/views/js/test.js"></script>
+<link rel="stylesheet" href="app/views/css/test.css">
+<link rel="stylesheet" href="app/views/css/bootstrap.min.css"> 
   
 
 </head>
@@ -31,7 +32,7 @@
       <li><a href="#"><spam class="glyphicon glyphicon-home">Inicio</spam></a></li>
       <li><a href="#"><spam class="glyphicon glyphicon-cog">Settings</spam></a></li>
       <li class="dropdown">
-        <a href="init.html" class="dropdown-toggle" data-toggle="dropdown">Administrar <b class="caret"></b></a>
+        <a href="app/inicio.php">Administrar</a>
         <ul class="dropdown-menu">
           <li><a href="#/events">Eventos</a></li>
           <li><a href="#/users">Users</a></li>
@@ -69,20 +70,25 @@
 
 	
   <div class="container" >	
-	<h2>Bienvenidos al Calendario</h2>
-	<div id='calendar'></div>
-	<div class="right">
-      <button class="btn btn-primary start">
+	<h2 id="demob">Bienvenidos al Calendario</h2>
+	<div class="">
+      <button id="btnNew" class="btn btn-primary start">
           <i class="glyphicon glyphicon-upload"></i>
-          <span>Start</span>
-      </button>
-      <button data-dz-remove class="btn btn-warning cancel">
-          <i class="glyphicon glyphicon-ban-circle"></i>
-          <span>Cancel</span>
-      </button>
-      
-    </div>
+          <span>New event</span>
+      </button>         
+    </div>    
+
+  <div id='calendar'></div>
+	
   	 
-    </div>
+<script>
+$(document).ready(function(){
+  
+});
+</script>
+
+<div style="display:none" id="modal-confirmation" title="Delete?">Are you sure you want to delete?</div>
+
+</div>
 </body>
 </html>
