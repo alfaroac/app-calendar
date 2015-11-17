@@ -63,7 +63,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3 class="col-sm-offset-4">Add Users</h3>
             </div>
-            <form name="fe" action="../php/add_users.php" class="form-horizontal" method="post">
+            <form name="fe" action="controller/php/add_users.php" class="form-horizontal" method="post">
 				<fieldset ><!--disabled--> 
 				
 				<div class="form-group has-success">

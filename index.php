@@ -7,9 +7,9 @@
 <script src='app/views/js/moment.min.js'></script>
 <script src='app/views/js/jquery.min.js'></script>
 <script src="app/views/js/jquery-2.1.3.min.js"></script>
-<script src='app/views/js/fullcalendar.min.js'></script>
-<script src="app/views/js/test.js"></script>
-<link rel="stylesheet" href="app/views/css/test.css">
+<script src='app/views/js/calendar/fullcalendar.min.js'></script>
+<script src="app/views/js/calendar/mycalendar.js"></script>
+<link rel="stylesheet" href="app/views/css/mycalendar.css">
 <link rel="stylesheet" href="app/views/css/bootstrap.min.css"> 
   
 
@@ -83,11 +83,15 @@
   	 
 <script>
 $(document).ready(function(){
-  
+  $("#demob").hide();
+  $("#btnNew").on('click', function(event) {
+    $("#modal-confirmation").show();
+    $("#demob").show();
+  });
 });
 </script>
 
-<div style="display:none" id="modal-confirmation" title="Delete?">Are you sure you want to delete?</div>
+<div style="" id="modal-confirmation" title="Delete?">Are you sure you want to delete?</div>
 
 </div>
 </body>

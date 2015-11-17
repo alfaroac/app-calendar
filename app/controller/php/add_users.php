@@ -26,6 +26,8 @@
 			# code...
 			die('Error: '.mysqli_error($con));
 		}else{
+			include("../../views/templates/users.php");
 			echo "Registro exitoso!";
+
 		}
 ?>

@@ -48,7 +48,7 @@
                 <h3 class="col-sm-offset-4">Add Evidences</h3>
             </div>
             
-            <form id="formEvidences" class="form form-horizontal" onsubmit="return modificaRegistro();">
+            <form id="formEvidences" ng-submit="guardaResgitro()" class="form form-horizontal" onsubmit="return modificaRegistro();">
 			<div class="modal-body">				
 				<div class="form-group">
 					<label for="description"  class="control-label col-md-3">Descripcion:</label>
