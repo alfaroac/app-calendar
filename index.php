@@ -8,9 +8,9 @@
 <script src='app/views/js/jquery.min.js'></script>
 <script src="app/views/js/jquery-2.1.3.min.js"></script>
 <script src='app/views/js/calendar/fullcalendar.min.js'></script>
-<script src="app/views/js/calendar/mycalendar.js"></script>
 <link rel="stylesheet" href="app/views/css/mycalendar.css">
 <link rel="stylesheet" href="app/views/css/bootstrap.min.css"> 
+<script src="app/views/js/calendar/mycalendar.js"></script>
   
 
 </head>
